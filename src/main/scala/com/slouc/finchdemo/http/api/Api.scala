@@ -34,6 +34,11 @@ object Api {
       Ok(FancyResponse(200, "This is one fancy response!", FancyResponseBody("response")))
   }
 
+  val endpoint5: Endpoint[String] = get("health") {
+    () =>
+      // do something and return Output
+      Ok("{'health': 'ok'}")
+  }
 }
 
 case class Book(title: String, author: String)

@@ -13,3 +13,11 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-core" % "0.7.1",
   "io.circe" %% "circe-generic" % "0.7.1"
 )
+
+val meta = """META.INF(.)*""".r
+
+assemblyMergeStrategy in assembly := {
+    case "BUILD" => MergeStrategy.discard
+    case meta(_)  => MergeStrategy.discard // or MergeStrategy.discard, your choice
+    case other => MergeStrategy.defaultMergeStrategy(other)
+  }

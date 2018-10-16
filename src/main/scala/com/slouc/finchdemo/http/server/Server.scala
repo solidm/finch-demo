@@ -11,7 +11,7 @@ import io.finch.circe._
 object Server extends TwitterServer {
 
   val api: Service[Request, Response] =
-    (Api.endpoint1 :+: Api.endpoint2 :+: Api.endpoint3 :+: Api.endpoint4)
+    (Api.endpoint1 :+: Api.endpoint2 :+: Api.endpoint3 :+: Api.endpoint4 :+: Api.endpoint5)
       .toService
 
   def main(): Unit = {
